@@ -59,8 +59,8 @@ draw_border(fb, border_width, oled_width, oled_height)
 
 
 # Network Credentials (Replace with your actual credentials)
-SSID = "DNA-WIFI-00C7"
-PASSWORD = "69713655"
+SSID = "SmartIotMQTT"
+PASSWORD = "SmartIot"
 BROKER_IP = "192.168.1.254"
 CLIENT_ID = ""  # Unique ID for your device
 
@@ -269,11 +269,12 @@ class Program:
             "sdnn" : sdnn,
             "rmssd" : rmssd,
         }
+        
+        
         topic = "Group_5/Analysis"
         mqtt_client.publish(topic, ujson.dumps(message))
         
-        Saved_text_datas = f"Time:{time_stamp},meanPPI:{meanRR},MeanHR:{meanHR}bpm,SDNN:{sdnn},RMSSD:{rmssd}"
-        store_measurement(Saved_text_datas)
+        
  
 #---------------------------------------------------------__ONLINE_ANALYSIS__----
         
